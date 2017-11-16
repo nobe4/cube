@@ -1,3 +1,3 @@
 # Cube
 
--> [the link here]()
+-> [nobe4.fr/cube/](https://nobe4.fr/cube/)
