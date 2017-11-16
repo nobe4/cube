@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title> Cube Perspective </title>
+		<style>
+			#steps > :not(.displayed) { display: none; }
+			body {
+				max-width: 500px;
+				margin: auto;
+			}
+			canvas {
+				border: 1px solid black;
+				margin: 1em 0;
+			}
+			div {
+				margin: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500"></canvas>
+		<script type="text/javascript" src="script.js"></script>
+		<div>
+			<label for="debug">Debug</label>
+			<input type="checkbox" id="debug" name='debug' checked onchange="debug=this.checked;">
+
+			<label for="step">Step</label>
+			<select id="step" name="step" onchange="changeStep(this.value);">
+				<option value="0" selected>0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+			</select>
+		</div>
+
+		<div id="steps">
+
+			<div id="step0" class="displayed">
+				Welcome, here's the first step to contruct a 3D cube with perspective
+				change: Fix your center and create three handles that will represent the
+				three dimensions. <br>
+				You can drag the handles around. Try it! <br>
+				You can disable the debug (gray dotted lines) with the checkbox, and go
+				to the next step with the step dropdown.
+			</div>
+
+			<div id="step1">
+				We compute the points at the center of the exiting lines.
+			</div>
+
+			<div id="step2">
+				We then create new lines between the handles and those new points, you
+				can see the front of the cube starting to appear.
+			</div>
+
+			<div id="step3">Now let's add the intersection points between all those new lines. They are the corners of our cube.</div>
+
+			<div id="step4">
+				Maybe it's clearer with strong lines, can you see the cube now? <br>
+				We have our three "front" faces of our cube, but the "back" ones are missing, let's add them now!
+			</div>
+
+			<div id="step5">
+				We can create the last point by finding the intersection between the lines from the handles to their oposite intersection points.
+			</div>
+
+			<div id="step6">
+				Let's remove all points and trace the remaining lines, and voilà! <br>
+			</div>
+
+		</div>
+	</body>
+</html>
